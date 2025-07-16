@@ -287,9 +287,9 @@ public class SWFOutputStream extends OutputStream {
      * @throws IOException On I/O error
      */
     public void writeUI16(int value) throws IOException {
-        if (value > 0xffff) {
-            throw new ValueTooLargeException("UI16", value);
-        }
+        // if (value > 0xffff) {
+        //     throw new ValueTooLargeException("UI16", value);
+        // }
 
         write((int) (value & 0xff));
         write((int) ((value >> 8) & 0xff));
