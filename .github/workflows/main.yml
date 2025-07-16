@@ -64,4 +64,9 @@ jobs:
         export CICD_TEMP=${{ runner.temp }}
         chmod a+x ./cicd_scripts/*.sh
         ./cicd_scripts/before_install.sh
-        ./cicd_scripts/script.sh
+        ./cicd_scripts/script.sh   
+    - name: Upload Build Artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: ffdec-build-${{ github.ref_name }}
+        path: dist/
